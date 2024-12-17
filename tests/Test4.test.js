@@ -15,9 +15,8 @@ describe('Test 4', ()=>{
 
     })
    
-    it('Check header properties', ()=>{
-        
-
+    it('Check club card', ()=>{
+    
         let card = dom.window.document.querySelector('#club');
 
         expect(card.src).toContain('card.png');
@@ -25,7 +24,6 @@ describe('Test 4', ()=>{
         fireEvent.click(card);
 
         expect(card.src).toContain('club.png');
-        
-
+    
     });
 })

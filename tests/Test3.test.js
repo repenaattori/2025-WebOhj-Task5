@@ -25,6 +25,5 @@ describe('Test 3', ()=>{
 
         expect(card.src).toContain('spade.png');
         
-
     });
 })
