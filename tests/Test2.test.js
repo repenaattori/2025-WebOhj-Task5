@@ -3,7 +3,7 @@ const {JSDOM} = require('jsdom');
 require('@testing-library/dom')
 require('@testing-library/jest-dom');
 
-describe('Test 2', ()=>{
+describe('Test 5', ()=>{
     let dom;
     beforeEach(async ()=>{
         dom = await JSDOM.fromFile('./index.html',{
@@ -15,17 +15,21 @@ describe('Test 2', ()=>{
 
     })
    
-    it('Check diamond card', ()=>{
-        
+    it('Check turn cards', ()=>{
 
-        let card = dom.window.document.querySelector('#diamond');
+        let button = dom.window.document.querySelector('button');
+        let cards  = dom.window.document.querySelectorAll('img');
 
-        expect(card.src).toContain('card.png');
-    
-        fireEvent.click(card);
+        for (const c of cards) {
+            fireEvent.click(c);
+            expect(c.src).toContain(c.id);
+        }
 
-        expect(card.src).toContain('diamond.png');
-        
+        fireEvent.click(button);
+
+        for (const c of cards) {
+            expect(c.src).toContain('card.png');
+        }
 
     });
 })

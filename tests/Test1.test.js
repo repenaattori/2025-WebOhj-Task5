@@ -27,4 +27,39 @@ describe('Test 1', ()=>{
         
 
     });
+    it('Check diamond card', ()=>{
+        
+
+        let card = dom.window.document.querySelector('#diamond');
+
+        expect(card.src).toContain('card.png');
+    
+        fireEvent.click(card);
+
+        expect(card.src).toContain('diamond.png');
+        
+
+    });
+    it('Check spade card', ()=>{
+
+        let card = dom.window.document.querySelector('#spade');
+
+        expect(card.src).toContain('card.png');
+    
+        fireEvent.click(card);
+
+        expect(card.src).toContain('spade.png');
+        
+    });
+    it('Check club card', ()=>{
+    
+        let card = dom.window.document.querySelector('#club');
+
+        expect(card.src).toContain('card.png');
+    
+        fireEvent.click(card);
+
+        expect(card.src).toContain('club.png');
+    
+    });
 })
